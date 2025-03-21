@@ -1,8 +1,11 @@
-export default function HomePage() {
+import MovieList from '../components/MovieList/MovieList';
+
+function HomePage() {
   return (
     <div>
-      <h1>Welcome to admin panel</h1>
-      <p>Lorem</p>
+      <MovieList />
     </div>
   );
 }
+
+export default HomePage;
