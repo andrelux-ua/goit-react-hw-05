@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const API_URL = 'https://api.themoviedb.org/3';
-
 const API_Token = 'f42cfca1242a367131ba1b97cbe8fef5';
 
 const fetchApi = axios.create({

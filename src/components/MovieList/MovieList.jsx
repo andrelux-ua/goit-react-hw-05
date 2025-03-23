@@ -19,10 +19,23 @@ const MovieList = () => {
 
   return (
     <div>
-      <h2>Popular Movies</h2>
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-evenly',
+          gap: '50px',
+        }}
+      >
         {movies.map(movie => (
-          <div key={movie.id}>
+          <div
+            key={movie.id}
+            style={{
+              backgroundColor: '#373737',
+              borderRadius: '10px',
+              boxShadow: ' 2px 2px 50px rgba(0, 0, 255, 0.8)',
+            }}
+          >
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
