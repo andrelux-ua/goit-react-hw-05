@@ -56,7 +56,10 @@ button:focus-visible {
   :root {
     color: #fad504;
     background-color: #ffffff;
-    background-image: url(/src/assets/fon-movies.jpg);
+    background-image: url(/src/image/fon-movies.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   a:hover {
     color: #747bff;

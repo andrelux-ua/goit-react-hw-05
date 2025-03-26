@@ -1,11 +1,15 @@
 import axios from 'axios';
 
 const API_URL = 'https://api.themoviedb.org/3';
-const API_Token = 'f42cfca1242a367131ba1b97cbe8fef5';
+const API_Token =
+  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDJjZmNhMTI0MmEzNjcxMzFiYTFiOTdjYmU4ZmVmNSIsIm5iZiI6MTc0MjMwMTY1NC4yOCwic3ViIjoiNjdkOTY5ZDZjNTMzOWVhYmM2MzY2MDZkIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.PbEbOFu_uTP1kuO9q1MYQ4tZCgq2iBTYmjlviT3MdOA';
 
 const fetchApi = axios.create({
   baseURL: API_URL,
-  params: { api_key: API_Token, language: 'en-US' },
+  headers: {
+    Authorization: API_Token,
+  },
+  params: { language: 'en-US' },
 });
 
 export const getPopularMovies = async () => {

@@ -1,17 +1,22 @@
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  position: fixed;
+  top: 0;
+  height: 75px;
+  left: 0;
   padding: 12px 0;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #2a2a2a;
-  margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: url(/src/image/fon-movies.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  z-index: 99999;
 }
 
 .nav {
-  background-color: #f8f9fa;
   padding: 10px 20px;
 }
 
