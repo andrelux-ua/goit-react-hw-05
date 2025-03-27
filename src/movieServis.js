@@ -16,11 +16,19 @@ export const getPopularMovies = async () => {
   const response = await fetchApi.get('/movie/popular');
   return response.data.results;
 };
+getPopularMovies().then(movies => console.log(movies));
 
 export const searchMovies = async query => {
   const response = await fetchApi.get('/search/movie', { params: { query } });
   return response.data.results;
 };
+// export const searchMovies = async (query, page = 1) => {
+//   const response = await fetchApi.get('/search/movie', {
+//     params: { query, page },
+//   });
+//   return response.data;
+// };
+// searchMovies('Inception').then(movies => console.log(movies));
 
 export const getMovieDetails = async movieId => {
   const response = await fetchApi.get(`/movie/${movieId}`);

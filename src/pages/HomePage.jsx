@@ -26,7 +26,7 @@ function HomePage() {
 
   return (
     <section style={{ paddingTop: '75px' }}>
-      <div style={{ paddingTop: '10px' }}>
+      <div style={{ textAlign: 'center', paddingTop: '10px' }}>
         <h2
           style={{
             color: 'white',
