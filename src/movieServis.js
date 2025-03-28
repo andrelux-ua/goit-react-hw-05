@@ -23,33 +23,43 @@ export const searchMovies = async (query, page = 1) => {
     const response = await fetchApi.get('/search/movie', {
       params: { query, page },
     });
-    return response.data; // Повертаємо весь об'єкт response.data
+    return response.data;
   } catch (error) {
     console.error('Error searching movies:', error);
-    throw error; // Перекидаємо помилку для обробки в компоненті
+    throw error;
   }
 };
-
 searchMovies('Inception')
   .then(data => console.log(data.results))
   .catch(error => console.error('Error in searchMovies:', error));
 
-// export const searchMovies = async query => {
-//   const response = await fetchApi.get('/search/movie', { params: { query } });
-//   return response.data.results;
-// };
-// searchMovies('Inception').then(movies => console.log(movies));
-
-//=====================
-// export const searchMovies = async (query, page = 1) => {
-//   const response = await fetchApi.get('/search/movie', {
-//     params: { query, page },
-//   });
-//   return response.data.results;
-// };
-// searchMovies('Inception').then(movies => console.log(movies));
-
 export const getMovieDetails = async movieId => {
-  const response = await fetchApi.get(`/movie/${movieId}`);
-  return response.data;
+  try {
+    const response = await fetchApi.get(`/movie/${movieId}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching movie details:', error);
+    throw error;
+  }
+};
+
+export const getMovieCredits = async movieId => {
+  try {
+    const response = await fetchApi.get(`/movie/${movieId}/credits`);
+    return response.data.cast;
+  } catch (error) {
+    console.error('Error fetching movie credits:', error);
+    return [];
+  }
+};
+// getMovieCredits(550).then(cast => console.log(cast));
+
+export const getMovieReviews = async movieId => {
+  try {
+    const response = await fetchApi.get(`/movie/${movieId}/reviews`);
+    return response.data; // Повертаємо response.data, де є results
+  } catch (error) {
+    console.error('Error fetching movie reviews:', error); //виправлено текст помилки
+    return [];
+  }
 };
