@@ -30,6 +30,7 @@ function MoviesPage() {
   useEffect(() => {
     if (!debouncedQuery) {
       setMovies([]);
+      setTotalPages(0);
       return;
     }
 
@@ -38,7 +39,9 @@ function MoviesPage() {
         setIsLoading(true);
         setError(false);
         const data = await searchMovies(debouncedQuery, page);
-        setMovies(prevMovies => (page === 1 ? data : [...prevMovies, ...data]));
+        setMovies(prevMovies =>
+          page === 1 ? data.results : [...prevMovies, ...data.results]
+        );
         setTotalPages(data.total_pages);
       } catch {
         setError(true);
@@ -49,16 +52,6 @@ function MoviesPage() {
 
     getMovies();
   }, [debouncedQuery, page]);
-
-  const handleChangeQuery = newQuery => {
-    if (!newQuery.trim()) {
-      setSearchParams({});
-      setMovies([]);
-      return;
-    }
-    setSearchParams({ query: newQuery, page: 1 });
-    setMovies([]);
-  };
 
   const handleLoadMore = () => {
     setSearchParams({ query, page: page + 1 });

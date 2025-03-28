@@ -8,6 +8,7 @@ function MovieList({ movies }) {
       style={{
         display: 'flex',
         flexWrap: 'wrap',
+        justifyContent: 'space-around',
         gap: '25px',
       }}
     >

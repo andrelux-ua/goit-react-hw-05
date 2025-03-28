@@ -18,15 +18,34 @@ export const getPopularMovies = async () => {
 };
 getPopularMovies().then(movies => console.log(movies));
 
-export const searchMovies = async query => {
-  const response = await fetchApi.get('/search/movie', { params: { query } });
-  return response.data.results;
+export const searchMovies = async (query, page = 1) => {
+  try {
+    const response = await fetchApi.get('/search/movie', {
+      params: { query, page },
+    });
+    return response.data; // Повертаємо весь об'єкт response.data
+  } catch (error) {
+    console.error('Error searching movies:', error);
+    throw error; // Перекидаємо помилку для обробки в компоненті
+  }
 };
+
+searchMovies('Inception')
+  .then(data => console.log(data.results))
+  .catch(error => console.error('Error in searchMovies:', error));
+
+// export const searchMovies = async query => {
+//   const response = await fetchApi.get('/search/movie', { params: { query } });
+//   return response.data.results;
+// };
+// searchMovies('Inception').then(movies => console.log(movies));
+
+//=====================
 // export const searchMovies = async (query, page = 1) => {
 //   const response = await fetchApi.get('/search/movie', {
 //     params: { query, page },
 //   });
-//   return response.data;
+//   return response.data.results;
 // };
 // searchMovies('Inception').then(movies => console.log(movies));
 
