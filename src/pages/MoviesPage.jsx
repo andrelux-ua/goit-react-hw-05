@@ -58,7 +58,7 @@ function MoviesPage() {
   };
 
   return (
-    <div style={{ textAlign: 'center', paddingTop: '100px' }}>
+    <div style={{ paddingTop: '100px', paddingBottom: '25px' }}>
       <SearchMovies value={query} onSubmit={changeSearchMovies} />
       {isLoading && <b>Loading movies...</b>}
       {error && <b>Whoops, there was an error. Please reload the page...</b>}

@@ -102,6 +102,9 @@ function MovieDetailsPage() {
             <NavLink to="cast">Movie Cast</NavLink>
           </li>
           <li>
+            <NavLink to="trailer">Movie Trailer</NavLink>
+          </li>
+          <li>
             <NavLink to="reviews">Movie Reviews</NavLink>
           </li>
         </ul>

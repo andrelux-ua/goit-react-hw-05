@@ -13,12 +13,12 @@ function Navigation() {
         <ul className={css.list}>
           <li>
             <NavLink to="/" className={getLinkStyles}>
-              HomePage
+              Home Page
             </NavLink>
           </li>
           <li>
             <NavLink to="/movies" className={getLinkStyles}>
-              MoviesPage
+              Movies Page
             </NavLink>
           </li>
         </ul>

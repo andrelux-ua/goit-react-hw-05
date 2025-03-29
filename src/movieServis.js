@@ -12,11 +12,23 @@ const fetchApi = axios.create({
   params: { language: 'en-US' },
 });
 
-export const getPopularMovies = async () => {
-  const response = await fetchApi.get('/movie/popular');
-  return response.data.results;
+export const getPopularMovies = async (page = 1) => {
+  try {
+    const response = await fetchApi.get('/movie/popular', {
+      params: { page },
+    });
+    return response.data; // Повертаємо весь об'єкт response.data
+  } catch (error) {
+    console.error('Error fetching popular movies:', error);
+    throw error;
+  }
 };
-getPopularMovies().then(movies => console.log(movies));
+
+// export const getPopularMovies = async () => {
+//   const response = await fetchApi.get('/movie/popular');
+//   return response.data.results;
+// };
+// getPopularMovies().then(movies => console.log(movies));
 
 export const searchMovies = async (query, page = 1) => {
   try {
@@ -61,5 +73,35 @@ export const getMovieReviews = async movieId => {
   } catch (error) {
     console.error('Error fetching movie reviews:', error); //виправлено текст помилки
     return [];
+  }
+};
+
+// export const getMovieTrailer = async movieId => {
+//   try {
+//     const response = await fetchApi.get(`/movie/${movieId}/videos`);
+//     return response.data.results.find(video => video.type === 'Trailer');
+//   } catch (error) {
+//     console.error('Error fetching movie trailer:', error);
+//     return null;
+//   }
+// };
+
+export const getMovieTrailer = async movieId => {
+  try {
+    const response = await fetchApi.get(`/movie/${movieId}/videos`);
+
+    const trailers = response.data.results?.filter(
+      video => video.type === 'Trailer'
+    );
+
+    if (!trailers || trailers.length === 0) {
+      console.warn(`No trailers found for movieId: ${movieId}`);
+      return null;
+    }
+
+    return trailers[0]; // Повертаємо перший трейлер
+  } catch (error) {
+    console.error('Error fetching movie trailer:', error);
+    return null;
   }
 };

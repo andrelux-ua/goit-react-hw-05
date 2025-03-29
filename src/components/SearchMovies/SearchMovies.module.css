@@ -1,0 +1,70 @@
+.search {
+  position: fixed;
+  top: 55px;
+  height: 60px;
+  left: 0;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: url(/src/image/fon-movies.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  z-index: 99999;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.input {
+  width: 250px;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 2px solid rgba(0, 0, 255, 0.5);
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  box-shadow: 2px 2px 25px rgba(0, 0, 255, 0.8);
+}
+
+.input:hover {
+  box-shadow: 2px 2px 25px rgb(255, 217, 0.8);
+}
+
+.input:focus {
+  border-color: rgba(236, 136, 6, 0.733);
+  box-shadow: 1px 1px 8px rgb(255, 217, 0.8);
+}
+
+.button {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(0, 0, 255, 0.8);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 2px 2px 25px rgb(255, 217, 0.8);
+}
+
+.button:active {
+  background-color: rgb(43, 255, 1, 0.8);
+  box-shadow: 2px 2px 36px rgb(43, 255, 1, 0.8);
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}

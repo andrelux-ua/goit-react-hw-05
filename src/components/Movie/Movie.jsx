@@ -7,7 +7,6 @@ function Movie({ movie: { title, poster_path } }) {
         backgroundColor: '#373737',
         borderColor: 'blue',
         borderWidth: '5px',
-
         borderRadius: '10px',
         boxShadow: ' 2px 2px 50px rgba(0, 0, 255, 0.8)',
       }}
