@@ -58,12 +58,26 @@ function MoviesPage() {
   };
 
   return (
-    <div style={{ paddingTop: '100px', paddingBottom: '25px' }}>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        paddingTop: '120px',
+        paddingBottom: '25px',
+      }}
+    >
       <SearchMovies value={query} onSubmit={changeSearchMovies} />
       {isLoading && <b>Loading movies...</b>}
       {error && <b>Whoops, there was an error. Please reload the page...</b>}
       {movies.length > 0 && (
-        <div>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            paddingTop: '64px',
+          }}
+        >
           <MovieList movies={movies} />
           {page < totalPages && <LoadMoreBtn onClick={handleLoadMore} />}
         </div>

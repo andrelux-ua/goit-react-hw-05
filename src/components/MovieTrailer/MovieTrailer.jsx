@@ -41,16 +41,15 @@ function MovieTrailer() {
   }
 
   return (
-    <div>
+    <div style={{ margin: '10px 150px 100px 50px' }}>
       <iframe
         width="560"
         height="315"
-        src={`https://www.youtube.com/embed/${trailerKey}`} // ✅ Виправлено
+        src={`https://www.youtube.com/embed/${trailerKey}`}
         title="YouTube video player"
-        frameBorder="0" // ✅ JSX синтаксис
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin" // ✅ JSX синтаксис
-        allowFullScreen // ✅ JSX синтаксис
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
       ></iframe>
     </div>
   );

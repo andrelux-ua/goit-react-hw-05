@@ -8,7 +8,7 @@ function MovieReviews() {
 
   useEffect(() => {
     getMovieReviews(movieId)
-      .then(data => setReviews(data.results)) // Виправлено: data.results замість data
+      .then(data => setReviews(data.results)) 
       .catch(error => console.error(error));
   }, [movieId]);
 

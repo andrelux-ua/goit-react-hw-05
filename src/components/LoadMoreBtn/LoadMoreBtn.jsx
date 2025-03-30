@@ -1,6 +1,6 @@
 function LoadMoreBtn({ onClick }) {
   return (
-    <div className="loadMoreContainer">
+    <div style={{ paddingTop: '25px' }} className="loadMoreContainer">
       <button onClick={onClick} className="loadMoreButton">
         Load more
       </button>

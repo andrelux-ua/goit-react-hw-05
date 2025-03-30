@@ -13,7 +13,7 @@ function MovieCast() {
   }, [movieId]);
 
   return (
-    <div>
+    <div style={{ marginLeft: '150px' }}>
       <h1>Cast</h1>
       <ul>
         {cast.map(actor => (

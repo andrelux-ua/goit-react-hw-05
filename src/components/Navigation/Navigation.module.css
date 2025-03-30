@@ -1,5 +1,5 @@
 .header {
-  font-size: 25px;
+  font-size: 21px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,14 +7,13 @@
   top: 0;
   height: 55px;
   left: 0;
-  padding: 12px 0;
+  padding: 15px 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   background-image: url(/src/image/fon-movies.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   z-index: 99999;
 }
 
@@ -25,19 +24,19 @@
 .list {
   list-style: none;
   display: flex;
-  column-gap: 100px;
+  column-gap: 125px;
 }
 
 .link {
   text-decoration: none;
   color: #ffffff;
   font-weight: 500;
-
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   transition: color 0.2s ease-in-out;
 }
 
 .link:hover {
-  color: #007bff;
+  color: rgb(43, 255, 1, 0.8);
 }
 
 .active {

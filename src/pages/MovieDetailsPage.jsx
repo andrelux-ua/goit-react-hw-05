@@ -43,13 +43,18 @@ function MovieDetailsPage() {
 
   return (
     <div>
-      {/* <Link to={goBackRef.current}>Go back</Link> */}
-      <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <div style={{ padding: '75px 25px 0', fontFamily: 'Arial, sans-serif' }}>
         <h1>{movieData.title}</h1>
         <img
           src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
           alt={movieData.title}
-          style={{ width: '200px', height: '300px', borderRadius: '8px' }}
+          style={{
+            width: '200px',
+            height: '300px',
+            borderRadius: '8px',
+            marginTop: '50px',
+            marginBottom: '25px',
+          }}
         />
         <p>
           <strong>Tagline:</strong> {movieData.tagline}
@@ -96,8 +101,8 @@ function MovieDetailsPage() {
           {movieData.spoken_languages.map(language => language.name).join(', ')}
         </p>
       </div>
-      <div>
-        <ul>
+      <div style={{ padding: '25px' }}>
+        <ul style={{ padding: '25px' }}>
           <li>
             <NavLink to="cast">Movie Cast</NavLink>
           </li>
