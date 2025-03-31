@@ -1,0 +1,13 @@
+.titleHomePage {
+  font-size: 90px;
+  font-family: Impact, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  background-image: url(/src/image/w5.jpg);
+  background-clip: text;
+  color: transparent;
+  /* background-size:  cover; */
+  background-position: center;
+  background-repeat: no-repeat;
+  text-shadow: 0 0 50px rgba(255, 250, 250, 0.195);
+}

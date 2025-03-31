@@ -1,7 +1,8 @@
 import { useState, useEffect, Suspense, useRef } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { getMovieDetails } from '../movieServis';
+import GoBackBtn from '../components/GoBackBtn/GoBackBtn';
 
 function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -10,7 +11,7 @@ function MovieDetailsPage() {
   const [error, setError] = useState(null);
 
   const location = useLocation();
-  const backLinkRef = useRef(location.state);
+  const backLinkRef = useRef(location.state ?? '/movies');
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -44,10 +45,12 @@ function MovieDetailsPage() {
   return (
     <div>
       <div style={{ padding: '75px 25px 0', fontFamily: 'Arial, sans-serif' }}>
+        <GoBackBtn to={backLinkRef} />
+
         <h1>{movieData.title}</h1>
         <img
           src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
-          alt={movieData.title}
+          alt={`${movieData.title} movie poster`}
           style={{
             width: '200px',
             height: '300px',
@@ -79,7 +82,7 @@ function MovieDetailsPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Link
+            Link resource
           </a>
         </p>
         <p>

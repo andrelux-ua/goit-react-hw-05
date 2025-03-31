@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import MovieList from '../components/MovieList/MovieList';
 import { getPopularMovies } from '../movieServis';
+import MovieList from '../components/MovieList/MovieList';
 import LoadMoreBtn from '../components/LoadMoreBtn/LoadMoreBtn';
+import css from './PagesStyles/Pages.module.css';
 
 function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -56,23 +57,7 @@ function HomePage() {
             backgroundAttachment: 'fixed',
           }}
         >
-          <h1
-            style={{
-              fontSize: '90px',
-              fontFamily: 'Impact, Arial, sans-serif',
-              textTransform: 'uppercase',
-              letterSpacing: '8px',
-              backgroundImage: 'url(/src/image/w5.jpg)',
-              backgroundClip: 'text',
-              color: 'transparent',
-              // backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              textShadow: '0 0 50px rgba(255, 250, 250, 0.195)',
-            }}
-          >
-            Popular Movies
-          </h1>
+          <h1 className={css.titleHomePage}>Popular Movies</h1>
         </div>
 
         {isLoading && <b>Loading movies...</b>}
