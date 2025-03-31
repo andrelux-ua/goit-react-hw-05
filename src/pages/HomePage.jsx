@@ -37,26 +37,8 @@ function HomePage() {
 
   return (
     <section style={{ paddingTop: '175px' }}>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          textAlign: 'center',
-          paddingTop: '5px',
-          paddingBottom: '25px',
-        }}
-      >
-        <div
-          style={{
-            position: 'fixed',
-            top: '50px',
-            width: '100%',
-            backgroundImage: 'url(/src/image/fon-movies.jpg)',
-            // backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-          }}
-        >
+      <div className={css.wrapper}>
+        <div className={css.popular}>
           <h1 className={css.titleHomePage}>Popular Movies</h1>
         </div>
 
